@@ -12,4 +12,4 @@ phases:
     commands:
       - echo Build started 
       - echo Building the Docker image...          
-      - docker build -t abcdefs:$CODEBUILD_BUILD_NUMBER .
+      - docker build -t abcdefs:$CODEBUILD_WEBHOOK_HEAD_REF .
