@@ -1,0 +1,8 @@
+version: 0.2
+
+run-as: Linux-user-name
+
+phases:
+  pre_build:
+    run-as: Linux-user-name
+    commands: docker build -t 866.dkr.ecr.us-west-2.amazonaws.com/ad-proxy:$CODEBUILD_WEBHOOK_HEAD_REF-$CODEBUILD_BUILD_NUMBER -f Dockerfile .
