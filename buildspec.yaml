@@ -11,5 +11,5 @@ phases:
   build:
     commands:
       - echo Build started 
-      - echo Building the Docker image...          
+      - echo Building the Docker image as sample...          
       - docker build -t abcdefs:$CODEBUILD_WEBHOOK_HEAD_REF .
