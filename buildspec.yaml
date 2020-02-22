@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    branchName: $CODEBUILD_WEBHOOK_TRIGGER
+    branchName: "$CODEBUILD_WEBHOOK_TRIGGER"
 
 phases:
   install:
