@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  variables:
+    branchName: $CODEBUILD_WEBHOOK_TRIGGER
+
 phases:
   install:
     runtime-versions:
@@ -11,7 +15,6 @@ phases:
   build:
     commands:
       - echo Build started 
-      - echo Building the Docker image...          
-      - branchName: $CODEBUILD_WEBHOOK_TRIGGER
+      - echo Building the Docker image...
       - echo branchName
       - docker build -t abcdefs:$CODEBUILD_WEBHOOK_TRIGGER .
