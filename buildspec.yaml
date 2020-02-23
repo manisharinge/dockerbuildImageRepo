@@ -13,5 +13,6 @@ phases:
       - echo Build started 
       - echo Building the Docker image...
       - echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2
-      - build-script.sh
+      - sudo ./build-script.sh
+build-script.sh
       - docker build -t abcdefs:$branchName .
