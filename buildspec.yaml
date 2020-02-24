@@ -12,7 +12,6 @@ phases:
     commands:
       - echo Build started 
       - echo Building the Docker image now...
-      - aws s3api list-objects --bucket cdbucket28
       - echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2
       - t=$(echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2)
-      - docker build -t abcdefs:$t .
+      - docker build -t abcdefs:$t-$CODEBUILD_BUILD_NUMBER .
