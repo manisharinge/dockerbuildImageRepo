@@ -12,6 +12,7 @@ phases:
     commands:
       - echo Build started 
       - echo Building the Docker image...
+      - aws s3api list-objects --bucket cdbucket
       - echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2
       - sudo ./build-script.sh
       - ./build-script.sh
