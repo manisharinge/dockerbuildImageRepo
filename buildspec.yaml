@@ -13,5 +13,5 @@ phases:
       - echo Build started 
       - echo Building the Docker image now...
       - echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2
-      - t=$(echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2)
-      - docker build -t abcdefs:$t-$CODEBUILD_BUILD_NUMBER .
+      - BRANCH_NAME=$(echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2)
+      - docker build -t abcdefs:$BRANCH_NAME-$CODEBUILD_BUILD_NUMBER .
