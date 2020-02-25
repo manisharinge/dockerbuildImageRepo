@@ -16,5 +16,3 @@ phases:
       - echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2
       - BRANCH_NAME=$(echo "$CODEBUILD_WEBHOOK_TRIGGER" | cut -d'/' -f 2)
       - docker build -t abcdefs:$BRANCH_NAME-$CODEBUILD_BUILD_NUMBER .
-      - echo Building the Docker image as sample...          
-      - docker build -t abcdefs:$CODEBUILD_WEBHOOK_HEAD_REF .
